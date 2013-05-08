@@ -34,11 +34,23 @@
         float whitePawnOffsetHeight = cellHeight * 7 + cellPaddingY;
         float cellOffset = cellWidth * i + cellPaddingX;
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(cellOffset, whitePawnOffsetHeight, 20, 20)];
+        label.backgroundColor = [UIColor whiteColor];
+        label.textColor = [UIColor blackColor];
         label.text = @"P";
         
         [self.view addSubview:label];
     }
     
+    for (int i = 0; i < columns; i++) {
+        float blackPawnOffsetHeight = cellHeight * 1 + cellPaddingY;
+        float cellOffset = cellWidth * i + cellPaddingX;
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(cellOffset, blackPawnOffsetHeight, 20, 20)];
+        label.backgroundColor = [UIColor blackColor];
+        label.textColor = [UIColor whiteColor];
+        label.text = @"P";
+        
+        [self.view addSubview:label];
+    }
 }
 
 - (void)didReceiveMemoryWarning
