@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		78EC9997173AD2FC0087FC33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC9996173AD2FC0087FC33 /* UIKit.framework */; };
+		78EC9999173AD2FC0087FC33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC9998173AD2FC0087FC33 /* Foundation.framework */; };
+		78EC999B173AD2FC0087FC33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC999A173AD2FC0087FC33 /* CoreGraphics.framework */; };
+		78EC99A1173AD2FC0087FC33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78EC999F173AD2FC0087FC33 /* InfoPlist.strings */; };
+		78EC99A3173AD2FC0087FC33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EC99A2173AD2FC0087FC33 /* main.m */; };
+		78EC99A7173AD2FC0087FC33 /* EDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EC99A6173AD2FC0087FC33 /* EDAppDelegate.m */; };
+		78EC99A9173AD2FC0087FC33 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 78EC99A8173AD2FC0087FC33 /* Default.png */; };
+		78EC99AB173AD2FC0087FC33 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78EC99AA173AD2FC0087FC33 /* Default@2x.png */; };
+		78EC99AD173AD2FC0087FC33 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78EC99AC173AD2FC0087FC33 /* Default-568h@2x.png */; };
+		78EC99B0173AD2FC0087FC33 /* EDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EC99AF173AD2FC0087FC33 /* EDViewController.m */; };
+		78EC99B3173AD2FC0087FC33 /* EDViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78EC99B1173AD2FC0087FC33 /* EDViewController_iPhone.xib */; };
+		78EC99B6173AD2FC0087FC33 /* EDViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78EC99B4173AD2FC0087FC33 /* EDViewController_iPad.xib */; };
+		78EC99BE173AD2FC0087FC33 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC99BD173AD2FC0087FC33 /* SenTestingKit.framework */; };
+		78EC99BF173AD2FC0087FC33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC9996173AD2FC0087FC33 /* UIKit.framework */; };
+		78EC99C0173AD2FC0087FC33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC9998173AD2FC0087FC33 /* Foundation.framework */; };
+		78EC99C8173AD2FC0087FC33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78EC99C6173AD2FC0087FC33 /* InfoPlist.strings */; };
+		78EC99CB173AD2FC0087FC33 /* ChessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EC99CA173AD2FC0087FC33 /* ChessTests.m */; };
+		78EC99D5173AD3270087FC33 /* chessboard_iPhone.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 78EC99D4173AD3270087FC33 /* chessboard_iPhone.jpeg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78EC99C1173AD2FC0087FC33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78EC998B173AD2FC0087FC33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78EC9992173AD2FC0087FC33;
+			remoteInfo = Chess;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		78EC9993173AD2FC0087FC33 /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EC9996173AD2FC0087FC33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		78EC9998173AD2FC0087FC33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		78EC999A173AD2FC0087FC33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		78EC999E173AD2FC0087FC33 /* Chess-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Chess-Info.plist"; sourceTree = "<group>"; };
+		78EC99A0173AD2FC0087FC33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		78EC99A2173AD2FC0087FC33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		78EC99A4173AD2FC0087FC33 /* Chess-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chess-Prefix.pch"; sourceTree = "<group>"; };
+		78EC99A5173AD2FC0087FC33 /* EDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDAppDelegate.h; sourceTree = "<group>"; };
+		78EC99A6173AD2FC0087FC33 /* EDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EDAppDelegate.m; sourceTree = "<group>"; };
+		78EC99A8173AD2FC0087FC33 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		78EC99AA173AD2FC0087FC33 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		78EC99AC173AD2FC0087FC33 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		78EC99AE173AD2FC0087FC33 /* EDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDViewController.h; sourceTree = "<group>"; };
+		78EC99AF173AD2FC0087FC33 /* EDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EDViewController.m; sourceTree = "<group>"; };
+		78EC99B2173AD2FC0087FC33 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EDViewController_iPhone.xib; sourceTree = "<group>"; };
+		78EC99B5173AD2FC0087FC33 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EDViewController_iPad.xib; sourceTree = "<group>"; };
+		78EC99BC173AD2FC0087FC33 /* ChessTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EC99BD173AD2FC0087FC33 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		78EC99C5173AD2FC0087FC33 /* ChessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChessTests-Info.plist"; sourceTree = "<group>"; };
+		78EC99C7173AD2FC0087FC33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		78EC99C9173AD2FC0087FC33 /* ChessTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessTests.h; sourceTree = "<group>"; };
+		78EC99CA173AD2FC0087FC33 /* ChessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessTests.m; sourceTree = "<group>"; };
+		78EC99D4173AD3270087FC33 /* chessboard_iPhone.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chessboard_iPhone.jpeg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78EC9990173AD2FC0087FC33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EC9997173AD2FC0087FC33 /* UIKit.framework in Frameworks */,
+				78EC9999173AD2FC0087FC33 /* Foundation.framework in Frameworks */,
+				78EC999B173AD2FC0087FC33 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EC99B8173AD2FC0087FC33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EC99BE173AD2FC0087FC33 /* SenTestingKit.framework in Frameworks */,
+				78EC99BF173AD2FC0087FC33 /* UIKit.framework in Frameworks */,
+				78EC99C0173AD2FC0087FC33 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78EC998A173AD2FC0087FC33 = {
+			isa = PBXGroup;
+			children = (
+				78EC999C173AD2FC0087FC33 /* Chess */,
+				78EC99C3173AD2FC0087FC33 /* ChessTests */,
+				78EC9995173AD2FC0087FC33 /* Frameworks */,
+				78EC9994173AD2FC0087FC33 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		78EC9994173AD2FC0087FC33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78EC9993173AD2FC0087FC33 /* Chess.app */,
+				78EC99BC173AD2FC0087FC33 /* ChessTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78EC9995173AD2FC0087FC33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78EC9996173AD2FC0087FC33 /* UIKit.framework */,
+				78EC9998173AD2FC0087FC33 /* Foundation.framework */,
+				78EC999A173AD2FC0087FC33 /* CoreGraphics.framework */,
+				78EC99BD173AD2FC0087FC33 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78EC999C173AD2FC0087FC33 /* Chess */ = {
+			isa = PBXGroup;
+			children = (
+				78EC99A5173AD2FC0087FC33 /* EDAppDelegate.h */,
+				78EC99A6173AD2FC0087FC33 /* EDAppDelegate.m */,
+				78EC99AE173AD2FC0087FC33 /* EDViewController.h */,
+				78EC99AF173AD2FC0087FC33 /* EDViewController.m */,
+				78EC99B1173AD2FC0087FC33 /* EDViewController_iPhone.xib */,
+				78EC99B4173AD2FC0087FC33 /* EDViewController_iPad.xib */,
+				78EC999D173AD2FC0087FC33 /* Supporting Files */,
+			);
+			path = Chess;
+			sourceTree = "<group>";
+		};
+		78EC999D173AD2FC0087FC33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78EC99D4173AD3270087FC33 /* chessboard_iPhone.jpeg */,
+				78EC999E173AD2FC0087FC33 /* Chess-Info.plist */,
+				78EC999F173AD2FC0087FC33 /* InfoPlist.strings */,
+				78EC99A2173AD2FC0087FC33 /* main.m */,
+				78EC99A4173AD2FC0087FC33 /* Chess-Prefix.pch */,
+				78EC99A8173AD2FC0087FC33 /* Default.png */,
+				78EC99AA173AD2FC0087FC33 /* Default@2x.png */,
+				78EC99AC173AD2FC0087FC33 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78EC99C3173AD2FC0087FC33 /* ChessTests */ = {
+			isa = PBXGroup;
+			children = (
+				78EC99C9173AD2FC0087FC33 /* ChessTests.h */,
+				78EC99CA173AD2FC0087FC33 /* ChessTests.m */,
+				78EC99C4173AD2FC0087FC33 /* Supporting Files */,
+			);
+			path = ChessTests;
+			sourceTree = "<group>";
+		};
+		78EC99C4173AD2FC0087FC33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78EC99C5173AD2FC0087FC33 /* ChessTests-Info.plist */,
+				78EC99C6173AD2FC0087FC33 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		78EC9992173AD2FC0087FC33 /* Chess */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78EC99CE173AD2FC0087FC33 /* Build configuration list for PBXNativeTarget "Chess" */;
+			buildPhases = (
+				78EC998F173AD2FC0087FC33 /* Sources */,
+				78EC9990173AD2FC0087FC33 /* Frameworks */,
+				78EC9991173AD2FC0087FC33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chess;
+			productName = Chess;
+			productReference = 78EC9993173AD2FC0087FC33 /* Chess.app */;
+			productType = "com.apple.product-type.application";
+		};
+		78EC99BB173AD2FC0087FC33 /* ChessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78EC99D1173AD2FC0087FC33 /* Build configuration list for PBXNativeTarget "ChessTests" */;
+			buildPhases = (
+				78EC99B7173AD2FC0087FC33 /* Sources */,
+				78EC99B8173AD2FC0087FC33 /* Frameworks */,
+				78EC99B9173AD2FC0087FC33 /* Resources */,
+				78EC99BA173AD2FC0087FC33 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78EC99C2173AD2FC0087FC33 /* PBXTargetDependency */,
+			);
+			name = ChessTests;
+			productName = ChessTests;
+			productReference = 78EC99BC173AD2FC0087FC33 /* ChessTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78EC998B173AD2FC0087FC33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ED;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Evan Dontje";
+			};
+			buildConfigurationList = 78EC998E173AD2FC0087FC33 /* Build configuration list for PBXProject "Chess" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 78EC998A173AD2FC0087FC33;
+			productRefGroup = 78EC9994173AD2FC0087FC33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78EC9992173AD2FC0087FC33 /* Chess */,
+				78EC99BB173AD2FC0087FC33 /* ChessTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78EC9991173AD2FC0087FC33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EC99A1173AD2FC0087FC33 /* InfoPlist.strings in Resources */,
+				78EC99A9173AD2FC0087FC33 /* Default.png in Resources */,
+				78EC99AB173AD2FC0087FC33 /* Default@2x.png in Resources */,
+				78EC99AD173AD2FC0087FC33 /* Default-568h@2x.png in Resources */,
+				78EC99B3173AD2FC0087FC33 /* EDViewController_iPhone.xib in Resources */,
+				78EC99B6173AD2FC0087FC33 /* EDViewController_iPad.xib in Resources */,
+				78EC99D5173AD3270087FC33 /* chessboard_iPhone.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EC99B9173AD2FC0087FC33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EC99C8173AD2FC0087FC33 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		78EC99BA173AD2FC0087FC33 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78EC998F173AD2FC0087FC33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EC99A3173AD2FC0087FC33 /* main.m in Sources */,
+				78EC99A7173AD2FC0087FC33 /* EDAppDelegate.m in Sources */,
+				78EC99B0173AD2FC0087FC33 /* EDViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EC99B7173AD2FC0087FC33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EC99CB173AD2FC0087FC33 /* ChessTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78EC99C2173AD2FC0087FC33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78EC9992173AD2FC0087FC33 /* Chess */;
+			targetProxy = 78EC99C1173AD2FC0087FC33 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		78EC999F173AD2FC0087FC33 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78EC99A0173AD2FC0087FC33 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		78EC99B1173AD2FC0087FC33 /* EDViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78EC99B2173AD2FC0087FC33 /* en */,
+			);
+			name = EDViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		78EC99B4173AD2FC0087FC33 /* EDViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78EC99B5173AD2FC0087FC33 /* en */,
+			);
+			name = EDViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		78EC99C6173AD2FC0087FC33 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78EC99C7173AD2FC0087FC33 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		78EC99CC173AD2FC0087FC33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78EC99CD173AD2FC0087FC33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78EC99CF173AD2FC0087FC33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chess/Chess-Prefix.pch";
+				INFOPLIST_FILE = "Chess/Chess-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		78EC99D0173AD2FC0087FC33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chess/Chess-Prefix.pch";
+				INFOPLIST_FILE = "Chess/Chess-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		78EC99D2173AD2FC0087FC33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chess.app/Chess";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chess/Chess-Prefix.pch";
+				INFOPLIST_FILE = "ChessTests/ChessTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		78EC99D3173AD2FC0087FC33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chess.app/Chess";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chess/Chess-Prefix.pch";
+				INFOPLIST_FILE = "ChessTests/ChessTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78EC998E173AD2FC0087FC33 /* Build configuration list for PBXProject "Chess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78EC99CC173AD2FC0087FC33 /* Debug */,
+				78EC99CD173AD2FC0087FC33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78EC99CE173AD2FC0087FC33 /* Build configuration list for PBXNativeTarget "Chess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78EC99CF173AD2FC0087FC33 /* Debug */,
+				78EC99D0173AD2FC0087FC33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		78EC99D1173AD2FC0087FC33 /* Build configuration list for PBXNativeTarget "ChessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78EC99D2173AD2FC0087FC33 /* Debug */,
+				78EC99D3173AD2FC0087FC33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78EC998B173AD2FC0087FC33 /* Project object */;
+}
