@@ -103,14 +103,23 @@
     [self.pieces addObject:blackBishopTwo];
     
     
-    EDQueen* whiteQueen = [[EDQueen alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"51"]] andColor:WHITE];
+    EDQueen* whiteQueen = [[EDQueen alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"41"]] andColor:WHITE];
     [self.view addSubview:whiteQueen.view];
     [self.pieces addObject:whiteQueen];
 
-    EDQueen* blackQueen = [[EDQueen alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"58"]] andColor:BLACK];
+    EDQueen* blackQueen = [[EDQueen alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"48"]] andColor:BLACK];
     [self.view addSubview:blackQueen.view];
     [self.pieces addObject:blackQueen];
     
+    
+    EDKing* whiteKing = [[EDKing alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"51"]] andColor:WHITE];
+    [self.view addSubview:whiteKing.view];
+    [self.pieces addObject:whiteKing];
+    
+    EDKing* blackKing = [[EDKing alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"58"]] andColor:BLACK];
+    [self.view addSubview:blackKing.view];
+    [self.pieces addObject:blackKing];
+
     
     self.view.userInteractionEnabled = YES;
     UITapGestureRecognizer* gestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapWithGesture:)];

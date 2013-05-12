@@ -12,6 +12,7 @@
 #import "EDKnight.h"
 #import "EDBishop.h"
 #import "EDQueen.h"
+#import "EDKing.h"
 #import "EDChessPoint.h"
 
 @interface EDViewController : UIViewController <UIGestureRecognizerDelegate>
