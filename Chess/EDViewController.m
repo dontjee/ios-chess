@@ -67,6 +67,22 @@
     [self.view addSubview:blackRookTwo.view];
     [self.pieces addObject:blackRookTwo];
     
+    EDKnight* whiteKnightOne = [[EDKnight alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"21"]] andColor:WHITE];
+    [self.view addSubview:whiteKnightOne.view];
+    [self.pieces addObject:whiteKnightOne];
+    
+    EDKnight* whiteKnightTwo = [[EDKnight alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"71"]] andColor:WHITE];
+    [self.view addSubview:whiteKnightTwo.view];
+    [self.pieces addObject:whiteKnightTwo];
+    
+    EDKnight* blackKnightOne = [[EDKnight alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"28"]] andColor:BLACK];
+    [self.view addSubview:blackKnightOne.view];
+    [self.pieces addObject:blackKnightOne];
+    
+    EDKnight* blackKnightTwo = [[EDKnight alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"78"]] andColor:BLACK];
+    [self.view addSubview:blackKnightTwo.view];
+    [self.pieces addObject:blackKnightTwo];
+    
     self.view.userInteractionEnabled = YES;
     UITapGestureRecognizer* gestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapWithGesture:)];
     [self.view addGestureRecognizer:gestureHandler];
