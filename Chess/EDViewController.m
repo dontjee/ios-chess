@@ -102,6 +102,16 @@
     [self.view addSubview:blackBishopTwo.view];
     [self.pieces addObject:blackBishopTwo];
     
+    
+    EDQueen* whiteQueen = [[EDQueen alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"51"]] andColor:WHITE];
+    [self.view addSubview:whiteQueen.view];
+    [self.pieces addObject:whiteQueen];
+
+    EDQueen* blackQueen = [[EDQueen alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"58"]] andColor:BLACK];
+    [self.view addSubview:blackQueen.view];
+    [self.pieces addObject:blackQueen];
+    
+    
     self.view.userInteractionEnabled = YES;
     UITapGestureRecognizer* gestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapWithGesture:)];
     [self.view addGestureRecognizer:gestureHandler];

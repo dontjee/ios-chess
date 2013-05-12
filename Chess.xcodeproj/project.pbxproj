@@ -11,6 +11,7 @@
 		782569FF1740500D009A8F1F /* EDRook.m in Sources */ = {isa = PBXBuildFile; fileRef = 782569FE1740500D009A8F1F /* EDRook.m */; };
 		78256A021740545B009A8F1F /* EDKnight.m in Sources */ = {isa = PBXBuildFile; fileRef = 78256A011740545B009A8F1F /* EDKnight.m */; };
 		78256A0517405613009A8F1F /* EDBishop.m in Sources */ = {isa = PBXBuildFile; fileRef = 78256A0417405613009A8F1F /* EDBishop.m */; };
+		78256A08174057CD009A8F1F /* EDQueen.m in Sources */ = {isa = PBXBuildFile; fileRef = 78256A07174057CD009A8F1F /* EDQueen.m */; };
 		7833F92C17400F0000E08138 /* EDPawn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7833F92B17400F0000E08138 /* EDPawn.m */; };
 		7833F92F1740295900E08138 /* EDChessPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7833F92E1740295900E08138 /* EDChessPoint.m */; };
 		78EC9997173AD2FC0087FC33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC9996173AD2FC0087FC33 /* UIKit.framework */; };
@@ -52,6 +53,8 @@
 		78256A011740545B009A8F1F /* EDKnight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDKnight.m; sourceTree = "<group>"; };
 		78256A0317405613009A8F1F /* EDBishop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDBishop.h; sourceTree = "<group>"; };
 		78256A0417405613009A8F1F /* EDBishop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDBishop.m; sourceTree = "<group>"; };
+		78256A06174057CD009A8F1F /* EDQueen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDQueen.h; sourceTree = "<group>"; };
+		78256A07174057CD009A8F1F /* EDQueen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDQueen.m; sourceTree = "<group>"; };
 		7833F92A17400F0000E08138 /* EDPawn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDPawn.h; sourceTree = "<group>"; };
 		7833F92B17400F0000E08138 /* EDPawn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDPawn.m; sourceTree = "<group>"; };
 		7833F92D1740295900E08138 /* EDChessPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDChessPoint.h; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				78256A011740545B009A8F1F /* EDKnight.m */,
 				78256A0317405613009A8F1F /* EDBishop.h */,
 				78256A0417405613009A8F1F /* EDBishop.m */,
+				78256A06174057CD009A8F1F /* EDQueen.h */,
+				78256A07174057CD009A8F1F /* EDQueen.m */,
 			);
 			path = Chess;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				782569FF1740500D009A8F1F /* EDRook.m in Sources */,
 				78256A021740545B009A8F1F /* EDKnight.m in Sources */,
 				78256A0517405613009A8F1F /* EDBishop.m in Sources */,
+				78256A08174057CD009A8F1F /* EDQueen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
