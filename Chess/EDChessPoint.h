@@ -13,5 +13,5 @@
 @property (readonly) int XPosition;
 @property (readonly) int YPosition;
 
--(EDChessPoint*) initWithPositionString: (NSString*) position;
++(EDChessPoint*) pointWithPositionString: (NSString*) position;
 @end

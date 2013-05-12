@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		782569FC17404B75009A8F1F /* EDPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 782569FB17404B75009A8F1F /* EDPiece.m */; };
+		782569FF1740500D009A8F1F /* EDRook.m in Sources */ = {isa = PBXBuildFile; fileRef = 782569FE1740500D009A8F1F /* EDRook.m */; };
 		7833F92C17400F0000E08138 /* EDPawn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7833F92B17400F0000E08138 /* EDPawn.m */; };
 		7833F92F1740295900E08138 /* EDChessPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7833F92E1740295900E08138 /* EDChessPoint.m */; };
 		78EC9997173AD2FC0087FC33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC9996173AD2FC0087FC33 /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 /* Begin PBXFileReference section */
 		782569FA17404B75009A8F1F /* EDPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDPiece.h; sourceTree = "<group>"; };
 		782569FB17404B75009A8F1F /* EDPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDPiece.m; sourceTree = "<group>"; };
+		782569FD1740500D009A8F1F /* EDRook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDRook.h; sourceTree = "<group>"; };
+		782569FE1740500D009A8F1F /* EDRook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDRook.m; sourceTree = "<group>"; };
 		7833F92A17400F0000E08138 /* EDPawn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDPawn.h; sourceTree = "<group>"; };
 		7833F92B17400F0000E08138 /* EDPawn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDPawn.m; sourceTree = "<group>"; };
 		7833F92D1740295900E08138 /* EDChessPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDChessPoint.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				7833F92E1740295900E08138 /* EDChessPoint.m */,
 				782569FA17404B75009A8F1F /* EDPiece.h */,
 				782569FB17404B75009A8F1F /* EDPiece.m */,
+				782569FD1740500D009A8F1F /* EDRook.h */,
+				782569FE1740500D009A8F1F /* EDRook.m */,
 			);
 			path = Chess;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				7833F92C17400F0000E08138 /* EDPawn.m in Sources */,
 				7833F92F1740295900E08138 /* EDChessPoint.m in Sources */,
 				782569FC17404B75009A8F1F /* EDPiece.m in Sources */,
+				782569FF1740500D009A8F1F /* EDRook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,11 @@
 
 @implementation EDChessPoint
 
++(EDChessPoint*) pointWithPositionString:(NSString *)position
+{
+    return [[EDChessPoint alloc] initWithPositionString:position];
+}
+
 -(EDChessPoint*) initWithPositionString: (NSString*) position
 {
     self = [super init];

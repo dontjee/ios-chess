@@ -38,18 +38,34 @@
     self.pieces = [NSMutableArray arrayWithCapacity:32];
     
     for (int i = 1; i <= 8; i++) {
-        EDChessPoint* position = [[EDChessPoint alloc] initWithPositionString:[NSString stringWithFormat:@"%i2",i]];
+        EDChessPoint* position = [EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"%i2",i]];
         EDPawn* piece = [[EDPawn alloc] initWithPosition: position andColor:WHITE];
         [self.view addSubview:piece.view];
         [self.pieces addObject:piece];
     }
     
-    for (int i = 0; i < 8; i++) {
-        EDChessPoint* position = [[EDChessPoint alloc] initWithPositionString:[NSString stringWithFormat:@"%i7",i]];
+    for (int i = 1; i <= 8; i++) {
+        EDChessPoint* position = [EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"%i7",i]];
         EDPawn* piece = [[EDPawn alloc] initWithPosition: position andColor:BLACK];
         [self.view addSubview:piece.view];
         [self.pieces addObject:piece];
     }
+    
+    EDRook* whiteRookOne = [[EDRook alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"11"]] andColor:WHITE];
+    [self.view addSubview:whiteRookOne.view];
+    [self.pieces addObject:whiteRookOne];
+    
+    EDRook* whiteRookTwo = [[EDRook alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"81"]] andColor:WHITE];
+    [self.view addSubview:whiteRookTwo.view];
+    [self.pieces addObject:whiteRookTwo];
+    
+    EDRook* blackRookOne = [[EDRook alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"18"]] andColor:BLACK];
+    [self.view addSubview:blackRookOne.view];
+    [self.pieces addObject:blackRookOne];
+    
+    EDRook* blackRookTwo = [[EDRook alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"88"]] andColor:BLACK];
+    [self.view addSubview:blackRookTwo.view];
+    [self.pieces addObject:blackRookTwo];
     
     self.view.userInteractionEnabled = YES;
     UITapGestureRecognizer* gestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapWithGesture:)];
@@ -78,7 +94,7 @@
     int x = (int)(point.x / cellWidth) + 1;
     int y = 8 - (int)(point.y / cellHeight);
     
-    return [[EDChessPoint alloc] initWithPositionString: [NSString stringWithFormat:@"%i%i", x, y]];
+    return [EDChessPoint pointWithPositionString: [NSString stringWithFormat:@"%i%i", x, y]];
 }
 
 - (void)didReceiveMemoryWarning
