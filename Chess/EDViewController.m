@@ -51,6 +51,7 @@
         [self.pieces addObject:piece];
     }
     
+    
     EDRook* whiteRookOne = [[EDRook alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"11"]] andColor:WHITE];
     [self.view addSubview:whiteRookOne.view];
     [self.pieces addObject:whiteRookOne];
@@ -67,6 +68,7 @@
     [self.view addSubview:blackRookTwo.view];
     [self.pieces addObject:blackRookTwo];
     
+    
     EDKnight* whiteKnightOne = [[EDKnight alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"21"]] andColor:WHITE];
     [self.view addSubview:whiteKnightOne.view];
     [self.pieces addObject:whiteKnightOne];
@@ -82,6 +84,23 @@
     EDKnight* blackKnightTwo = [[EDKnight alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"78"]] andColor:BLACK];
     [self.view addSubview:blackKnightTwo.view];
     [self.pieces addObject:blackKnightTwo];
+    
+    
+    EDBishop* whiteBishopOne = [[EDBishop alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"31"]] andColor:WHITE];
+    [self.view addSubview:whiteBishopOne.view];
+    [self.pieces addObject:whiteBishopOne];
+    
+    EDBishop* whiteBishopTwo = [[EDBishop alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"61"]] andColor:WHITE];
+    [self.view addSubview:whiteBishopTwo.view];
+    [self.pieces addObject:whiteBishopTwo];
+    
+    EDBishop* blackBishopOne = [[EDBishop alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"38"]] andColor:BLACK];
+    [self.view addSubview:blackBishopOne.view];
+    [self.pieces addObject:blackBishopOne];
+    
+    EDBishop* blackBishopTwo = [[EDBishop alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"68"]] andColor:BLACK];
+    [self.view addSubview:blackBishopTwo.view];
+    [self.pieces addObject:blackBishopTwo];
     
     self.view.userInteractionEnabled = YES;
     UITapGestureRecognizer* gestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapWithGesture:)];

@@ -10,6 +10,7 @@
 #import "EDPawn.h"
 #import "EDRook.h"
 #import "EDKnight.h"
+#import "EDBishop.h"
 #import "EDChessPoint.h"
 
 @interface EDViewController : UIViewController <UIGestureRecognizerDelegate>
