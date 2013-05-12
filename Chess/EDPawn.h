@@ -17,6 +17,8 @@ typedef enum chessColor
 
 @interface EDPawn : NSObject
 
--(EDPawn*) initWithLabel: (UILabel*) label position: (EDChessPoint*) position andColor: (ChessColor) color;
+@property (strong, readonly) UIView* view;
+
+-(EDPawn*) initWithPosition: (EDChessPoint*) position andColor: (ChessColor) color;
 
 @end

@@ -19,14 +19,16 @@
 
 @implementation EDPawn
 
--(EDPawn*) initWithLabel: (UILabel*) label position: (EDChessPoint*) position andColor: (ChessColor) color
+-(EDPawn*) initWithPosition: (EDChessPoint*) position andColor: (ChessColor) color;
 {
     self = [super init];
     if( self )
     {
+        self.ui = [[UILabel alloc] init];
+        _view = self.ui;
+        
         self.position = position;
         self.color = color;
-        self.ui = label;
      
         self.ui.frame = [self convertPositionToFrame:position];
         [self.ui setNeedsDisplay];

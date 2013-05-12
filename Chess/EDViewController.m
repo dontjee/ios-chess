@@ -36,28 +36,19 @@
     self.view.backgroundColor = [UIColor clearColor];
     
     self.pieces = [NSMutableArray arrayWithCapacity:32];
-	// Do any additional setup after loading the view, typically from a nib.
     
     for (int i = 1; i <= 8; i++) {
-        UILabel *label = [[UILabel alloc] init];
-        label.tag = i;
-        
         EDChessPoint* position = [[EDChessPoint alloc] initWithPositionString:[NSString stringWithFormat:@"%i2",i]];
-        EDPawn* piece = [[EDPawn alloc] initWithLabel: label position: position andColor:WHITE];
+        EDPawn* piece = [[EDPawn alloc] initWithPosition: position andColor:WHITE];
+        [self.view addSubview:piece.view];
         [self.pieces addObject:piece];
-        
-        [self.view addSubview:label];
     }
     
     for (int i = 0; i < 8; i++) {
-        UILabel *label = [[UILabel alloc] init];
-        label.tag = i;
-        
         EDChessPoint* position = [[EDChessPoint alloc] initWithPositionString:[NSString stringWithFormat:@"%i7",i]];
-        EDPawn* piece = [[EDPawn alloc] initWithLabel: label position: position andColor:BLACK];
+        EDPawn* piece = [[EDPawn alloc] initWithPosition: position andColor:BLACK];
+        [self.view addSubview:piece.view];
         [self.pieces addObject:piece];
-        
-        [self.view addSubview:label];
     }
     
     self.view.userInteractionEnabled = YES;
