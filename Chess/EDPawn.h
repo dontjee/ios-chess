@@ -7,18 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EDChessPoint.h"
+#import "EDPiece.h"
 
-typedef enum chessColor
-{
-    WHITE,
-    BLACK
-} ChessColor;
 
-@interface EDPawn : NSObject
-
-@property (strong, readonly) UIView* view;
-
--(EDPawn*) initWithPosition: (EDChessPoint*) position andColor: (ChessColor) color;
+@interface EDPawn : EDPiece
 
 @end
