@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7833F92C17400F0000E08138 /* EDPawn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7833F92B17400F0000E08138 /* EDPawn.m */; };
+		7833F92F1740295900E08138 /* EDChessPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7833F92E1740295900E08138 /* EDChessPoint.m */; };
 		78EC9997173AD2FC0087FC33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC9996173AD2FC0087FC33 /* UIKit.framework */; };
 		78EC9999173AD2FC0087FC33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC9998173AD2FC0087FC33 /* Foundation.framework */; };
 		78EC999B173AD2FC0087FC33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC999A173AD2FC0087FC33 /* CoreGraphics.framework */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7833F92A17400F0000E08138 /* EDPawn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDPawn.h; sourceTree = "<group>"; };
+		7833F92B17400F0000E08138 /* EDPawn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDPawn.m; sourceTree = "<group>"; };
+		7833F92D1740295900E08138 /* EDChessPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDChessPoint.h; sourceTree = "<group>"; };
+		7833F92E1740295900E08138 /* EDChessPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDChessPoint.m; sourceTree = "<group>"; };
 		78EC9993173AD2FC0087FC33 /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78EC9996173AD2FC0087FC33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		78EC9998173AD2FC0087FC33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,6 +134,10 @@
 				78EC99B1173AD2FC0087FC33 /* EDViewController_iPhone.xib */,
 				78EC99B4173AD2FC0087FC33 /* EDViewController_iPad.xib */,
 				78EC999D173AD2FC0087FC33 /* Supporting Files */,
+				7833F92A17400F0000E08138 /* EDPawn.h */,
+				7833F92B17400F0000E08138 /* EDPawn.m */,
+				7833F92D1740295900E08138 /* EDChessPoint.h */,
+				7833F92E1740295900E08138 /* EDChessPoint.m */,
 			);
 			path = Chess;
 			sourceTree = "<group>";
@@ -282,6 +292,8 @@
 				78EC99A3173AD2FC0087FC33 /* main.m in Sources */,
 				78EC99A7173AD2FC0087FC33 /* EDAppDelegate.m in Sources */,
 				78EC99B0173AD2FC0087FC33 /* EDViewController.m in Sources */,
+				7833F92C17400F0000E08138 /* EDPawn.m in Sources */,
+				7833F92F1740295900E08138 /* EDChessPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +484,7 @@
 				78EC99D0173AD2FC0087FC33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78EC99D1173AD2FC0087FC33 /* Build configuration list for PBXNativeTarget "ChessTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +493,7 @@
 				78EC99D3173AD2FC0087FC33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

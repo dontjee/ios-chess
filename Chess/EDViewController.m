@@ -11,39 +11,52 @@
 @interface EDViewController ()
 
 @property (strong) UILabel* selectedPiece;
+@property (strong) NSMutableArray* pieces;
 
 @end
 
 @implementation EDViewController
 
+//ICCF notation
+//-------------------------
+//black 
+//18 28 38 48 58 68 78 88
+//17 27
+//16 26
+//15 25
+//14 24
+//13 23
+//12 22
+//11 21 31 41 51 61 71 81
+//white
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor clearColor];
+    
+    self.pieces = [NSMutableArray arrayWithCapacity:32];
 	// Do any additional setup after loading the view, typically from a nib.
  
     int rows = 8;
     int columns = 8;
     int cellPaddingX = 13;
-    int cellPaddingY = 10;
+    int cellPaddingY = 0;
 
-    CGRect bounds = self.view.bounds;
+    CGRect bounds = [UIScreen mainScreen].bounds;
     
-    float cellHeight = (((float)bounds.size.height - 145) / (float)rows);
+    float cellHeight = ((float)bounds.size.height/ (float)rows);
     float cellWidth = ((float)bounds.size.width / (float)columns);
     
     for (int i = 0; i < columns; i++) {
-        float whitePawnOffsetHeight = cellHeight * 7 + cellPaddingY;
+        float whitePawnOffsetHeight = cellHeight * 6 + cellPaddingY;
         float cellOffset = cellWidth * i + cellPaddingX;
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(cellOffset, whitePawnOffsetHeight, 20, 20)];
-        label.backgroundColor = [UIColor whiteColor];
-        label.textColor = [UIColor blackColor];
-        label.text = @"P";
         label.tag = i;
         
-        label.userInteractionEnabled = YES;
-        UITapGestureRecognizer* gestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapPieceWithGesture:)];
-        [label addGestureRecognizer:gestureHandler];
+        EDChessPoint* position = [self convertPointToChessPosition:label.frame.origin];
+        EDPawn* piece = [[EDPawn alloc] initWithLabel: label position: position andColor:WHITE];
+        [self.pieces addObject:piece];
         
         [self.view addSubview:label];
     }
@@ -52,40 +65,49 @@
         float blackPawnOffsetHeight = cellHeight * 1 + cellPaddingY;
         float cellOffset = cellWidth * i + cellPaddingX;
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(cellOffset, blackPawnOffsetHeight, 20, 20)];
-        label.backgroundColor = [UIColor blackColor];
-        label.textColor = [UIColor whiteColor];
-        label.text = @"P";
+        label.tag = i;
+        
+        EDChessPoint* position = [self convertPointToChessPosition:label.frame.origin];
+        EDPawn* piece = [[EDPawn alloc] initWithLabel: label position: position andColor:BLACK];
+        [self.pieces addObject:piece];
         
         [self.view addSubview:label];
     }
+    
+    self.view.userInteractionEnabled = YES;
+    UITapGestureRecognizer* gestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapWithGesture:)];
+    [self.view addGestureRecognizer:gestureHandler];
+}
+
+- (void)didTapWithGesture:(UITapGestureRecognizer *)tapGesture {
+    CGPoint point = [tapGesture locationInView:self.view];
+    
+    EDChessPoint* position = [self convertPointToChessPosition:point];
+    NSLog(@"Tapped at %@", position.AsPositionString);
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"tappedPosition" object:position ];
+}
+
+-(EDChessPoint*)convertPointToChessPosition: (CGPoint) point
+{
+    int rows = 8;
+    int columns = 8;
+    
+    CGRect bounds = [UIScreen mainScreen].bounds;
+    
+    float cellHeight = (((float)bounds.size.height) / (float)rows);
+    float cellWidth = ((float)bounds.size.width / (float)columns);
+    
+    int x = (int)(point.x / cellWidth) + 1;
+    int y = 8 - (int)(point.y / cellHeight);
+    
+    return [[EDChessPoint alloc] initWithPositionString: [NSString stringWithFormat:@"%i%i", x, y]];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void) drawString: (NSString*) string withFont: (UIFont*) font inRect: (CGRect) contextRect {
-    
-    CGFloat fontHeight = font.pointSize;
-    CGFloat yOffset = (contextRect.size.height - fontHeight) / 2.0;
-    
-    CGRect textRect = CGRectMake(0, yOffset, contextRect.size.width, fontHeight);
-    
-    [string drawInRect:textRect withFont:font];
-}
-
-- (void)didTapPieceWithGesture:(UITapGestureRecognizer *)tapGesture {
-    if( self.selectedPiece != nil)
-    {
-        self.selectedPiece.backgroundColor = [UIColor clearColor];
-    }
-    
-    self.selectedPiece = (UILabel*) tapGesture.view;
-    self.selectedPiece.backgroundColor = [UIColor greenColor];
-    
-    NSLog(@"Tapped piece at %i", self.selectedPiece.tag);
 }
 
 @end
