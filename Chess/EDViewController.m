@@ -37,37 +37,23 @@
     
     self.pieces = [NSMutableArray arrayWithCapacity:32];
 	// Do any additional setup after loading the view, typically from a nib.
- 
-    int rows = 8;
-    int columns = 8;
-    int cellPaddingX = 13;
-    int cellPaddingY = 0;
-
-    CGRect bounds = [UIScreen mainScreen].bounds;
     
-    float cellHeight = ((float)bounds.size.height/ (float)rows);
-    float cellWidth = ((float)bounds.size.width / (float)columns);
-    
-    for (int i = 0; i < columns; i++) {
-        float whitePawnOffsetHeight = cellHeight * 6 + cellPaddingY;
-        float cellOffset = cellWidth * i + cellPaddingX;
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(cellOffset, whitePawnOffsetHeight, 20, 20)];
+    for (int i = 1; i <= 8; i++) {
+        UILabel *label = [[UILabel alloc] init];
         label.tag = i;
         
-        EDChessPoint* position = [self convertPointToChessPosition:label.frame.origin];
+        EDChessPoint* position = [[EDChessPoint alloc] initWithPositionString:[NSString stringWithFormat:@"%i2",i]];
         EDPawn* piece = [[EDPawn alloc] initWithLabel: label position: position andColor:WHITE];
         [self.pieces addObject:piece];
         
         [self.view addSubview:label];
     }
     
-    for (int i = 0; i < columns; i++) {
-        float blackPawnOffsetHeight = cellHeight * 1 + cellPaddingY;
-        float cellOffset = cellWidth * i + cellPaddingX;
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(cellOffset, blackPawnOffsetHeight, 20, 20)];
+    for (int i = 0; i < 8; i++) {
+        UILabel *label = [[UILabel alloc] init];
         label.tag = i;
         
-        EDChessPoint* position = [self convertPointToChessPosition:label.frame.origin];
+        EDChessPoint* position = [[EDChessPoint alloc] initWithPositionString:[NSString stringWithFormat:@"%i7",i]];
         EDPawn* piece = [[EDPawn alloc] initWithLabel: label position: position andColor:BLACK];
         [self.pieces addObject:piece];
         

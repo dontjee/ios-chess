@@ -27,6 +27,9 @@
         self.position = position;
         self.color = color;
         self.ui = label;
+     
+        self.ui.frame = [self convertPositionToFrame:position];
+        [self.ui setNeedsDisplay];
         
         self.ui.userInteractionEnabled = YES;
         UITapGestureRecognizer* gestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapPieceWithGesture:)];
