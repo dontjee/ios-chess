@@ -10,6 +10,8 @@
 
 @interface EDViewController ()
 
+@property (strong) UILabel* selectedPiece;
+
 @end
 
 @implementation EDViewController
@@ -37,6 +39,11 @@
         label.backgroundColor = [UIColor whiteColor];
         label.textColor = [UIColor blackColor];
         label.text = @"P";
+        label.tag = i;
+        
+        label.userInteractionEnabled = YES;
+        UITapGestureRecognizer* gestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapPieceWithGesture:)];
+        [label addGestureRecognizer:gestureHandler];
         
         [self.view addSubview:label];
     }
@@ -67,6 +74,18 @@
     CGRect textRect = CGRectMake(0, yOffset, contextRect.size.width, fontHeight);
     
     [string drawInRect:textRect withFont:font];
+}
+
+- (void)didTapPieceWithGesture:(UITapGestureRecognizer *)tapGesture {
+    if( self.selectedPiece != nil)
+    {
+        self.selectedPiece.backgroundColor = [UIColor clearColor];
+    }
+    
+    self.selectedPiece = (UILabel*) tapGesture.view;
+    self.selectedPiece.backgroundColor = [UIColor greenColor];
+    
+    NSLog(@"Tapped piece at %i", self.selectedPiece.tag);
 }
 
 @end
