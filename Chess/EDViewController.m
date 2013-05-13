@@ -51,74 +51,47 @@
         [self.pieces addObject:piece];
     }
     
-    
-    EDRook* whiteRookOne = [[EDRook alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"11"]] andColor:WHITE];
-    [self.view addSubview:whiteRookOne.view];
-    [self.pieces addObject:whiteRookOne];
-    
-    EDRook* whiteRookTwo = [[EDRook alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"81"]] andColor:WHITE];
-    [self.view addSubview:whiteRookTwo.view];
-    [self.pieces addObject:whiteRookTwo];
-    
-    EDRook* blackRookOne = [[EDRook alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"18"]] andColor:BLACK];
-    [self.view addSubview:blackRookOne.view];
-    [self.pieces addObject:blackRookOne];
-    
-    EDRook* blackRookTwo = [[EDRook alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"88"]] andColor:BLACK];
-    [self.view addSubview:blackRookTwo.view];
-    [self.pieces addObject:blackRookTwo];
-    
-    
-    EDKnight* whiteKnightOne = [[EDKnight alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"21"]] andColor:WHITE];
-    [self.view addSubview:whiteKnightOne.view];
-    [self.pieces addObject:whiteKnightOne];
-    
-    EDKnight* whiteKnightTwo = [[EDKnight alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"71"]] andColor:WHITE];
-    [self.view addSubview:whiteKnightTwo.view];
-    [self.pieces addObject:whiteKnightTwo];
-    
-    EDKnight* blackKnightOne = [[EDKnight alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"28"]] andColor:BLACK];
-    [self.view addSubview:blackKnightOne.view];
-    [self.pieces addObject:blackKnightOne];
-    
-    EDKnight* blackKnightTwo = [[EDKnight alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"78"]] andColor:BLACK];
-    [self.view addSubview:blackKnightTwo.view];
-    [self.pieces addObject:blackKnightTwo];
-    
-    
-    EDBishop* whiteBishopOne = [[EDBishop alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"31"]] andColor:WHITE];
-    [self.view addSubview:whiteBishopOne.view];
-    [self.pieces addObject:whiteBishopOne];
-    
-    EDBishop* whiteBishopTwo = [[EDBishop alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"61"]] andColor:WHITE];
-    [self.view addSubview:whiteBishopTwo.view];
-    [self.pieces addObject:whiteBishopTwo];
-    
-    EDBishop* blackBishopOne = [[EDBishop alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"38"]] andColor:BLACK];
-    [self.view addSubview:blackBishopOne.view];
-    [self.pieces addObject:blackBishopOne];
-    
-    EDBishop* blackBishopTwo = [[EDBishop alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"68"]] andColor:BLACK];
-    [self.view addSubview:blackBishopTwo.view];
-    [self.pieces addObject:blackBishopTwo];
-    
-    
-    EDQueen* whiteQueen = [[EDQueen alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"41"]] andColor:WHITE];
-    [self.view addSubview:whiteQueen.view];
-    [self.pieces addObject:whiteQueen];
-
-    EDQueen* blackQueen = [[EDQueen alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"48"]] andColor:BLACK];
-    [self.view addSubview:blackQueen.view];
-    [self.pieces addObject:blackQueen];
-    
-    
-    EDKing* whiteKing = [[EDKing alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"51"]] andColor:WHITE];
-    [self.view addSubview:whiteKing.view];
-    [self.pieces addObject:whiteKing];
-    
-    EDKing* blackKing = [[EDKing alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"58"]] andColor:BLACK];
-    [self.view addSubview:blackKing.view];
-    [self.pieces addObject:blackKing];
+    for (NSNumber* colorAsNumber in [NSArray arrayWithObjects:[NSNumber numberWithInt:WHITE], [NSNumber numberWithInt:BLACK], nil])
+    {
+        ChessColor color = [colorAsNumber integerValue];
+        int backRow = color == WHITE ? 1 : 8;
+        
+        EDRook* rookOne = [[EDRook alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"1%i", backRow]] andColor:color];
+        [self.view addSubview:rookOne.view];
+        [self.pieces addObject:rookOne];
+        
+        EDRook* rookTwo = [[EDRook alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"8%i", backRow]] andColor:color];
+        [self.view addSubview:rookTwo.view];
+        [self.pieces addObject:rookTwo];
+        
+        
+        EDKnight* knightOne = [[EDKnight alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"2%i", backRow]] andColor:color];
+        [self.view addSubview:knightOne.view];
+        [self.pieces addObject:knightOne];
+        
+        EDKnight* knightTwo = [[EDKnight alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"7%i", backRow]] andColor:color];
+        [self.view addSubview:knightTwo.view];
+        [self.pieces addObject:knightTwo];
+        
+        
+        EDBishop* bishopOne = [[EDBishop alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"3%i", backRow]] andColor:color];
+        [self.view addSubview:bishopOne.view];
+        [self.pieces addObject:bishopOne];
+        
+        EDBishop* bishopTwo = [[EDBishop alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"6%i", backRow]] andColor:color];
+        [self.view addSubview:bishopTwo.view];
+        [self.pieces addObject:bishopTwo];
+        
+        
+        EDQueen* queen = [[EDQueen alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"4%i", backRow]] andColor:color];
+        [self.view addSubview:queen.view];
+        [self.pieces addObject:queen];
+        
+        
+        EDKing* king = [[EDKing alloc] initWithPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"5%i", backRow]] andColor:color];
+        [self.view addSubview:king.view];
+        [self.pieces addObject:king];
+    }
 
     
     self.view.userInteractionEnabled = YES;
