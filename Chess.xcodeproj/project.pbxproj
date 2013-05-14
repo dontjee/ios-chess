@@ -15,6 +15,7 @@
 		78256A0B174059BF009A8F1F /* EDKing.m in Sources */ = {isa = PBXBuildFile; fileRef = 78256A0A174059BF009A8F1F /* EDKing.m */; };
 		7833F92C17400F0000E08138 /* EDPawn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7833F92B17400F0000E08138 /* EDPawn.m */; };
 		7833F92F1740295900E08138 /* EDChessPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7833F92E1740295900E08138 /* EDChessPoint.m */; };
+		7887E0EA17429CFF008C43DE /* EDChessGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7887E0E917429CFF008C43DE /* EDChessGame.m */; };
 		78EC9997173AD2FC0087FC33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC9996173AD2FC0087FC33 /* UIKit.framework */; };
 		78EC9999173AD2FC0087FC33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC9998173AD2FC0087FC33 /* Foundation.framework */; };
 		78EC999B173AD2FC0087FC33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC999A173AD2FC0087FC33 /* CoreGraphics.framework */; };
@@ -62,6 +63,8 @@
 		7833F92B17400F0000E08138 /* EDPawn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDPawn.m; sourceTree = "<group>"; };
 		7833F92D1740295900E08138 /* EDChessPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDChessPoint.h; sourceTree = "<group>"; };
 		7833F92E1740295900E08138 /* EDChessPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDChessPoint.m; sourceTree = "<group>"; };
+		7887E0E817429CFF008C43DE /* EDChessGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDChessGame.h; sourceTree = "<group>"; };
+		7887E0E917429CFF008C43DE /* EDChessGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDChessGame.m; sourceTree = "<group>"; };
 		78EC9993173AD2FC0087FC33 /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78EC9996173AD2FC0087FC33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		78EC9998173AD2FC0087FC33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -168,6 +171,8 @@
 				78256A07174057CD009A8F1F /* EDQueen.m */,
 				78256A09174059BF009A8F1F /* EDKing.h */,
 				78256A0A174059BF009A8F1F /* EDKing.m */,
+				7887E0E817429CFF008C43DE /* EDChessGame.h */,
+				7887E0E917429CFF008C43DE /* EDChessGame.m */,
 			);
 			path = Chess;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				78256A0517405613009A8F1F /* EDBishop.m in Sources */,
 				78256A08174057CD009A8F1F /* EDQueen.m in Sources */,
 				78256A0B174059BF009A8F1F /* EDKing.m in Sources */,
+				7887E0EA17429CFF008C43DE /* EDChessGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
