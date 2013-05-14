@@ -10,15 +10,19 @@
 
 @interface EDPiece ()
 
+@property (weak) EDChessGame* game;
+
 @end
 
 @implementation EDPiece
 
--(EDPiece*) initWithPosition: (EDChessPoint*) position andColor: (ChessColor) color;
+-(EDPiece*) initWithGame: (EDChessGame*) game andPosition: (EDChessPoint*) position andColor: (ChessColor) color
 {
     self = [super init];
     if( self )
     {
+        self.game = game;
+        
         self.ui = [[UILabel alloc] init];
         _view = self.ui;
         
@@ -33,7 +37,7 @@
         UITapGestureRecognizer* gestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapPieceWithGesture:)];
         [self.ui addGestureRecognizer:gestureHandler];
         
-        [self resetBackgroundColor];
+        [self resetUiBackgroundColor];
         self.ui.textColor = self.color == WHITE ? [UIColor blackColor] : [UIColor whiteColor];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didTapOnBoard:) name:@"tappedPosition" object:nil];
@@ -61,7 +65,7 @@
         [self.ui setNeedsDisplay];
         self.position = position;
     }
-    [self resetBackgroundColor];
+    [self resetUiBackgroundColor];
 }
 
 - (CGRect) convertPositionToFrame: (EDChessPoint*) position
@@ -81,7 +85,7 @@
     return CGRectMake(cellOffsetWidth, cellOffsetHeight, 20, 20);
 }
 
-- (void)resetBackgroundColor
+- (void)resetUiBackgroundColor
 {
     self.ui.backgroundColor = self.color == WHITE ? [UIColor whiteColor] : [UIColor blackColor];
     self.isSelected = NO;

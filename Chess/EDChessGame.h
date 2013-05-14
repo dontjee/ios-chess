@@ -13,7 +13,9 @@
 #import "EDBishop.h"
 #import "EDQueen.h"
 #import "EDKing.h"
+#import "EDPiece.h"
 #import "EDChessPoint.h"
+
 
 @interface EDChessGame : NSObject
 

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "EDChessPoint.h"
+@class EDChessGame;
 
 typedef enum chessColor
 {
@@ -24,7 +25,7 @@ typedef enum chessColor
 
 @property (strong, readonly) UIView* view;
 
--(EDPiece*) initWithPosition: (EDChessPoint*) position andColor: (ChessColor) color;
+-(EDPiece*) initWithGame: (EDChessGame*) game andPosition: (EDChessPoint*) position andColor: (ChessColor) color;
 
 // Must be overriden in subclasses
 - (BOOL) canMoveToPosition: (EDChessPoint*) position;
