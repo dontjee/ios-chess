@@ -18,5 +18,6 @@
 @interface EDChessGame : NSObject
 
 @property (strong, readonly) NSArray* pieces;
+@property (readonly) ChessColor currentTurnColor;
 
 @end
