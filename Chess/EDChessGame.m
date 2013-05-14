@@ -26,6 +26,11 @@
     return self;
 }
 
+-(void)didMove
+{
+    _currentTurnColor = self.currentTurnColor == WHITE ? BLACK : WHITE;
+}
+
 - (void)setupPiecesOnBoard:(NSMutableArray *)pieces
 {
     for (NSNumber* colorAsNumber in [NSArray arrayWithObjects:[NSNumber numberWithInt:WHITE], [NSNumber numberWithInt:BLACK], nil])

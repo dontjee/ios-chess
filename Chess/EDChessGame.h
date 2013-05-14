@@ -13,13 +13,13 @@
 #import "EDBishop.h"
 #import "EDQueen.h"
 #import "EDKing.h"
-#import "EDPiece.h"
 #import "EDChessPoint.h"
-
 
 @interface EDChessGame : NSObject
 
 @property (strong, readonly) NSArray* pieces;
 @property (readonly) ChessColor currentTurnColor;
+
+-(void)didMove;
 
 @end

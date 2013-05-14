@@ -7,6 +7,7 @@
 //
 
 #import "EDPiece.h"
+#import "EDChessGame.h"
 
 @interface EDPiece ()
 
@@ -49,8 +50,11 @@
 - (void)didTapPieceWithGesture:(UITapGestureRecognizer *)tapGesture {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"tappedPosition" object:self.position ];
     
-    self.isSelected = YES;
-    self.ui.backgroundColor = [UIColor greenColor];
+    if( self.game.currentTurnColor == self.color)
+    {
+        self.isSelected = YES;
+        self.ui.backgroundColor = [UIColor greenColor];
+    }
     
     NSLog(@"Tapped piece at %@", self.position.AsPositionString);
 }
@@ -58,12 +62,18 @@
 -(void)didTapOnBoard: (NSNotification*) notification
 {
     EDChessPoint* position = (EDChessPoint*) notification.object;
+    if( position == nil )
+    {
+        return;
+    }
     
-    if( position != nil && self.isSelected && [self canMoveToPosition: position] )
+    if( self.isSelected && [self canMoveToPosition: position] )
     {
         self.ui.frame = [self convertPositionToFrame:position];
         [self.ui setNeedsDisplay];
         self.position = position;
+        
+        [self.game didMove];
     }
     [self resetUiBackgroundColor];
 }
