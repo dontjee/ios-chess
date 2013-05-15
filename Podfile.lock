@@ -1,0 +1,10 @@
+PODS:
+  - WindowsAzureMobileServices (0.2)
+
+DEPENDENCIES:
+  - WindowsAzureMobileServices (~> 0.2)
+
+SPEC CHECKSUMS:
+  WindowsAzureMobileServices: 2afdf716735790b7e0753781964597da6edfd14d
+
+COCOAPODS: 0.19.1
