@@ -7,6 +7,7 @@
 //
 
 #import "EDPawn.h"
+#import "EDChessGame.h"
 
 @interface EDPawn ()
 
@@ -17,15 +18,21 @@
 - (BOOL) canMoveToPosition: (EDChessPoint*) position
 {
     BOOL canMove = self.position.XPosition == position.XPosition;
+    int moveDistance;
     if( self.color == WHITE )
     {
-        canMove &= position.YPosition - self.position.YPosition == 1;
+        moveDistance = position.YPosition - self.position.YPosition;
     }
     else
     {
-        canMove &= self.position.YPosition - position.YPosition == 1;
+        moveDistance = self.position.YPosition - position.YPosition;
     }
-    return canMove;
+    
+    canMove &= moveDistance == 1 || (!self.hasMovedAtLeastOnce && moveDistance == 2);
+    
+    int piecesCrossed = [self.game getCountOfPiecesCrossedFrom: self.position toPosition: position];
+    
+    return canMove && piecesCrossed == 0;
 }
 
 - (NSString*) getTextRepresentingPiece
