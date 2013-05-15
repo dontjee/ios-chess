@@ -8,6 +8,19 @@
 
 #import "EDChessGame.h"
 
+//ICCF notation
+//-------------------------
+//black
+//18 28 38 48 58 68 78 88
+//17 27
+//16 26
+//15 25
+//14 24
+//13 23
+//12 22
+//11 21 31 41 51 61 71 81
+//white
+
 @implementation EDChessGame
 -(EDChessGame*) init
 {
@@ -29,6 +42,39 @@
 -(void)didMove
 {
     _currentTurnColor = self.currentTurnColor == WHITE ? BLACK : WHITE;
+}
+
+-(int) getCountOfPiecesCrossedFrom: (EDChessPoint*) startPosition toPosition: (EDChessPoint*) endPosition
+{
+    int minX = MIN(startPosition.XPosition, endPosition.XPosition);
+    int maxX = MAX(startPosition.XPosition, endPosition.XPosition);
+    
+    int minY = MIN(startPosition.YPosition, endPosition.YPosition);
+    int maxY = MAX(startPosition.YPosition, endPosition.YPosition);
+    
+    NSMutableArray* positionsMovedOver = [NSMutableArray array];
+    for(int x = minX; x <= maxX; x++)
+    {
+        for(int y = minY; y <= maxY; y++)
+        {
+            if( ( x == maxX && y == maxY ) || ( x == minX && y == minY )  )
+            {
+                // This is the first or last position, therefore not one we are moving "over"
+                continue;
+            }
+            [positionsMovedOver addObject:[NSString stringWithFormat:@"%i%i",x,y]];
+        }
+    }
+    
+    int countMovedOver = 0;
+    for (EDPiece* piece in self.pieces) {
+        if( [positionsMovedOver containsObject:piece.position.AsPositionString] )
+        {
+            countMovedOver++;
+        }
+    }
+    
+    return countMovedOver;
 }
 
 - (void)setupPiecesOnBoard:(NSMutableArray *)pieces

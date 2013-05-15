@@ -7,12 +7,16 @@
 //
 
 #import "EDRook.h"
+#import "EDChessGame.h"
 
 @implementation EDRook
 - (BOOL) canMoveToPosition: (EDChessPoint*) position
 {
-    BOOL canMove = self.position.XPosition == position.XPosition | self.position.YPosition == position.YPosition;
-    return canMove;
+    BOOL canMoveInDirection = self.position.XPosition == position.XPosition | self.position.YPosition == position.YPosition;
+    
+    int piecesCrossed = [self.game getCountOfPiecesCrossedFrom: self.position toPosition: position];
+    
+    return canMoveInDirection && piecesCrossed == 0;
 }
 
 - (NSString*) getTextRepresentingPiece

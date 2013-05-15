@@ -11,8 +11,6 @@
 
 @interface EDPiece ()
 
-@property (weak) EDChessGame* game;
-
 @end
 
 @implementation EDPiece

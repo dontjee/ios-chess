@@ -16,19 +16,6 @@
 
 @implementation EDViewController
 
-//ICCF notation
-//-------------------------
-//black 
-//18 28 38 48 58 68 78 88
-//17 27
-//16 26
-//15 25
-//14 24
-//13 23
-//12 22
-//11 21 31 41 51 61 71 81
-//white
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

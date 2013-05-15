@@ -21,5 +21,6 @@
 @property (readonly) ChessColor currentTurnColor;
 
 -(void)didMove;
+-(int) getCountOfPiecesCrossedFrom: (EDChessPoint*) startPosition toPosition: (EDChessPoint*) endPosition;
 
 @end

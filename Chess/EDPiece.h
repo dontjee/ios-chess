@@ -22,6 +22,7 @@ typedef enum chessColor
 @property ChessColor color;
 @property (strong) UILabel* ui;
 @property BOOL isSelected;
+@property (weak) EDChessGame* game;
 
 @property (strong, readonly) UIView* view;
 
