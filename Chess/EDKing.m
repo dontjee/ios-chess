@@ -7,6 +7,7 @@
 //
 
 #import "EDKing.h"
+#import "EDChessGame.h"
 
 @implementation EDKing
 - (BOOL) canMoveToPosition: (EDChessPoint*) position
@@ -20,7 +21,9 @@
     BOOL isMoveOneSpace = abs(self.position.XPosition - position.XPosition) == 1
                             || abs(self.position.YPosition - position.YPosition) == 1;
     
-    return (canMoveRookStyle || canMoveBishopStyle) && isMoveOneSpace;
+    int piecesCrossed = [self.game getCountOfPiecesCrossedFrom:self.position toPosition:position];
+    
+    return (canMoveRookStyle || canMoveBishopStyle) && isMoveOneSpace && piecesCrossed == 0;
 }
 
 - (NSString*) getTextRepresentingPiece

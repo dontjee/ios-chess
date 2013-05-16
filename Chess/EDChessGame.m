@@ -52,6 +52,48 @@
     int minY = MIN(startPosition.YPosition, endPosition.YPosition);
     int maxY = MAX(startPosition.YPosition, endPosition.YPosition);
     
+    NSMutableArray* positionsMovedOver;
+    if( minX == maxX || minY == maxY )
+    {
+        positionsMovedOver = [self enumeratePositionsInStraightLineFromY:minY andX:minX toY:maxY andX:maxX];
+    }
+    else
+    {
+        positionsMovedOver = [self enumeratePositionsInDiagonalLineFrom: startPosition to: endPosition];
+    }
+    
+    int countMovedOver = 0;
+    for (EDPiece* piece in self.pieces) {
+        if( [positionsMovedOver containsObject:piece.position.AsPositionString] )
+        {
+            countMovedOver++;
+        }
+    }
+    
+    return countMovedOver;
+}
+
+- (NSMutableArray *)enumeratePositionsInDiagonalLineFrom: (EDChessPoint*) startPosition to: (EDChessPoint*) endPosition
+{
+    NSMutableArray *positionsMovedOver = [NSMutableArray array];
+    
+    int xMovement = endPosition.XPosition > startPosition.XPosition ? 1 : -1 ;
+    int yMovement = endPosition.YPosition > startPosition.YPosition ? 1 : -1 ;
+
+    int distance = MAX(startPosition.XPosition, endPosition.XPosition) - MIN(startPosition.XPosition, endPosition.XPosition);
+    for (int i = 1; i <= distance; i++)
+    {
+        int x = startPosition.XPosition + (i * xMovement);
+        int y = startPosition.YPosition + (i * yMovement);
+        
+        [positionsMovedOver addObject:[NSString stringWithFormat:@"%i%i",x,y]];
+    }
+    
+    return positionsMovedOver;
+}
+
+- (NSMutableArray *)enumeratePositionsInStraightLineFromY:(int)minY andX:(int)minX toY:(int)maxY andX:(int)maxX
+{
     NSMutableArray* positionsMovedOver = [NSMutableArray array];
     for(int x = minX; x <= maxX; x++)
     {
@@ -66,15 +108,7 @@
         }
     }
     
-    int countMovedOver = 0;
-    for (EDPiece* piece in self.pieces) {
-        if( [positionsMovedOver containsObject:piece.position.AsPositionString] )
-        {
-            countMovedOver++;
-        }
-    }
-    
-    return countMovedOver;
+    return positionsMovedOver;
 }
 
 - (void)setupPiecesOnBoard:(NSMutableArray *)pieces

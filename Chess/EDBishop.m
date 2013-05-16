@@ -7,6 +7,7 @@
 //
 
 #import "EDBishop.h"
+#import "EDChessGame.h"
 
 @implementation EDBishop
 - (BOOL) canMoveToPosition: (EDChessPoint*) position
@@ -15,7 +16,9 @@
     canMove &= self.position.YPosition != position.YPosition;
     canMove &= abs(position.XPosition - self.position.XPosition) == abs(position.YPosition - self.position.YPosition);
     
-    return canMove;
+    int piecesCrossed = [self.game getCountOfPiecesCrossedFrom:self.position toPosition:position];
+    
+    return canMove && piecesCrossed == 0;
 }
 
 - (NSString*) getTextRepresentingPiece
