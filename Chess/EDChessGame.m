@@ -39,7 +39,7 @@
     return self;
 }
 
--(void)didMove
+-(void) didMovePiece: (EDPiece*) piece to: (EDChessPoint*) position;
 {
     _currentTurnColor = self.currentTurnColor == WHITE ? BLACK : WHITE;
 }

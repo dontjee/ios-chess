@@ -71,7 +71,7 @@
         [self.ui setNeedsDisplay];
         self.position = position;
         
-        [self.game didMove];
+        [self.game didMovePiece: self to: position];
         self.hasMovedAtLeastOnce = true;
     }
     [self resetUiBackgroundColor];
