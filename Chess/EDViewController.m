@@ -30,6 +30,14 @@
     self.view.userInteractionEnabled = YES;
     UITapGestureRecognizer* gestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapWithGesture:)];
     [self.view addGestureRecognizer:gestureHandler];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pieceCaptured:) name:@"pieceCaptured" object:nil];
+}
+
+-(void)pieceCaptured: (NSNotification*) notification
+{
+    EDPiece* capturedPiece = (EDPiece*) notification.object;
+    [capturedPiece.view removeFromSuperview];
 }
 
 - (void)didTapWithGesture:(UITapGestureRecognizer *)tapGesture {

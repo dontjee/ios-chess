@@ -20,7 +20,7 @@
 @property (strong, readonly) NSArray* pieces;
 @property (readonly) ChessColor currentTurnColor;
 
--(void) didMovePiece: (EDPiece*) piece to: (EDChessPoint*) position;
+-(void) piece: (EDPiece*) piece isMovingTo: (EDChessPoint*) position;
 -(int) getCountOfPiecesCrossedFrom: (EDChessPoint*) startPosition toPosition: (EDChessPoint*) endPosition;
 -(BOOL) piece: (EDPiece*) piece willCaptureAtPosition: (EDChessPoint*) position;
 -(EDPiece*) getPieceAt: (EDChessPoint*) position;

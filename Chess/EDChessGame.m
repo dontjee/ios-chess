@@ -8,6 +8,12 @@
 
 #import "EDChessGame.h"
 
+@interface EDChessGame()
+
+@property (strong) NSMutableArray* capturedPieces;
+
+@end
+
 //ICCF notation
 //-------------------------
 //black
@@ -34,14 +40,40 @@
         _currentTurnColor = WHITE;
         
         _pieces = [NSArray arrayWithArray:pieces];
+        
+        self.capturedPieces = [NSMutableArray arrayWithCapacity:32];
     }
     
     return self;
 }
 
--(void) didMovePiece: (EDPiece*) piece to: (EDChessPoint*) position;
+-(void) piece: (EDPiece*) piece isMovingTo: (EDChessPoint*) position
 {
     _currentTurnColor = self.currentTurnColor == WHITE ? BLACK : WHITE;
+    
+    EDPiece* capturedPiece;
+    for (EDPiece* pieceOnBoard in self.pieces)
+    {
+        if( position.AsPositionString == pieceOnBoard.position.AsPositionString && pieceOnBoard != piece )
+        {
+            capturedPiece = pieceOnBoard;
+            break;
+        }
+    }
+    
+    if( capturedPiece == nil )
+    {
+        return;
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pieceCaptured" object:capturedPiece ];
+    
+    [self.capturedPieces addObject:capturedPiece];
+    
+    NSMutableArray* currentPieces = [NSMutableArray arrayWithArray:self.pieces];
+    [currentPieces removeObject:capturedPiece];
+    
+    _pieces = [NSArray arrayWithArray:currentPieces];
 }
 
 -(int) getCountOfPiecesCrossedFrom: (EDChessPoint*) startPosition toPosition: (EDChessPoint*) endPosition
