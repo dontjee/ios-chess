@@ -50,7 +50,13 @@
     }
     int piecesCrossedTwo = [self.game getCountOfPiecesCrossedFrom: straightLineStartPositionTwo toPosition: position];
     
-    return canMove && (piecesCrossedOne <= 1 || piecesCrossedTwo <= 1);
+    
+    
+    
+    BOOL canStopAtLastPosition = [self.game getPieceAt:position] == nil || [self.game piece: self willCaptureAtPosition: position];
+    
+    
+    return canMove && (piecesCrossedOne <= 1 || piecesCrossedTwo <= 1) && canStopAtLastPosition;
 }
 
 - (NSString*) getTextRepresentingPiece

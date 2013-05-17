@@ -16,7 +16,9 @@
     
     int piecesCrossed = [self.game getCountOfPiecesCrossedFrom: self.position toPosition: position];
     
-    return canMoveInDirection && piecesCrossed == 0;
+    BOOL canStopAtLastPosition = [self.game getPieceAt:position] == nil || [self.game piece: self willCaptureAtPosition: position];
+    
+    return canMoveInDirection && piecesCrossed == 0 && canStopAtLastPosition;
 }
 
 - (NSString*) getTextRepresentingPiece

@@ -73,6 +73,29 @@
     return countMovedOver;
 }
 
+-(EDPiece*) getPieceAt: (EDChessPoint*) position
+{
+    for (EDPiece* pieceOnBoard in self.pieces) {
+        if( position.AsPositionString == pieceOnBoard.position.AsPositionString )
+        {
+            return pieceOnBoard;
+        }
+    }
+    return nil;
+}
+
+-(BOOL) piece: (EDPiece*) piece willCaptureAtPosition: (EDChessPoint*) position
+{
+    for (EDPiece* pieceOnBoard in self.pieces) {
+        if( position.AsPositionString == pieceOnBoard.position.AsPositionString )
+        {
+            return pieceOnBoard.color != piece.color;
+        }
+    }
+    
+    return FALSE;
+}
+
 - (NSMutableArray *)enumeratePositionsInDiagonalLineFrom: (EDChessPoint*) startPosition to: (EDChessPoint*) endPosition
 {
     NSMutableArray *positionsMovedOver = [NSMutableArray array];
@@ -81,7 +104,7 @@
     int yMovement = endPosition.YPosition > startPosition.YPosition ? 1 : -1 ;
 
     int distance = MAX(startPosition.XPosition, endPosition.XPosition) - MIN(startPosition.XPosition, endPosition.XPosition);
-    for (int i = 1; i <= distance; i++)
+    for (int i = 1; i < distance; i++)
     {
         int x = startPosition.XPosition + (i * xMovement);
         int y = startPosition.YPosition + (i * yMovement);

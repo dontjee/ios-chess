@@ -19,8 +19,10 @@
     canMoveBishopStyle &= abs(position.XPosition - self.position.XPosition) == abs(position.YPosition - self.position.YPosition);
     
     int piecesCrossed = [self.game getCountOfPiecesCrossedFrom:self.position toPosition:position];
+
+    BOOL canStopAtLastPosition = [self.game getPieceAt:position] == nil || [self.game piece: self willCaptureAtPosition: position];
     
-    return (canMoveRookStyle || canMoveBishopStyle) && piecesCrossed == 0;
+    return (canMoveRookStyle || canMoveBishopStyle) && piecesCrossed == 0 && canStopAtLastPosition;
 }
 
 - (NSString*) getTextRepresentingPiece

@@ -17,7 +17,33 @@
 
 - (BOOL) canMoveToPosition: (EDChessPoint*) position
 {
-    BOOL canMove = self.position.XPosition == position.XPosition;
+    BOOL canMoveInStraightLine;
+    canMoveInStraightLine = [self canMoveInStraightLine:position];
+    
+    BOOL canMoveDiagonal;
+    canMoveDiagonal = [self canMoveDiagonally:position];
+    
+    return canMoveInStraightLine || canMoveDiagonal;
+}
+
+- (BOOL)canMoveDiagonally:(EDChessPoint *)position
+{
+    BOOL canMoveBishopStyle = self.position.XPosition != position.XPosition;
+    canMoveBishopStyle &= self.position.YPosition != position.YPosition;
+    canMoveBishopStyle &= abs(position.XPosition - self.position.XPosition) == abs(position.YPosition - self.position.YPosition);
+    
+    BOOL isMoveOneSpace = abs(self.position.XPosition - position.XPosition) == 1
+    || abs(self.position.YPosition - position.YPosition) == 1;
+    
+    BOOL willCaptureOnMove = [self.game piece: self willCaptureAtPosition: position];
+    
+    BOOL canMoveDiagonal = canMoveBishopStyle && isMoveOneSpace && willCaptureOnMove;
+    return canMoveDiagonal;
+}
+
+- (BOOL)canMoveInStraightLine:(EDChessPoint *)position
+{
+    BOOL canMoveInStraightLine = self.position.XPosition == position.XPosition;
     int moveDistance;
     if( self.color == WHITE )
     {
@@ -28,11 +54,16 @@
         moveDistance = self.position.YPosition - position.YPosition;
     }
     
-    canMove &= moveDistance == 1 || (!self.hasMovedAtLeastOnce && moveDistance == 2);
+    canMoveInStraightLine &= moveDistance == 1 || (!self.hasMovedAtLeastOnce && moveDistance == 2);
     
     int piecesCrossed = [self.game getCountOfPiecesCrossedFrom: self.position toPosition: position];
     
-    return canMove && piecesCrossed == 0;
+    canMoveInStraightLine &= piecesCrossed == 0;
+    
+    EDPiece* endingPiece = [self.game getPieceAt:position];
+    canMoveInStraightLine &= endingPiece == nil;
+    
+    return canMoveInStraightLine;
 }
 
 - (NSString*) getTextRepresentingPiece

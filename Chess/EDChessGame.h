@@ -22,5 +22,7 @@
 
 -(void)didMove;
 -(int) getCountOfPiecesCrossedFrom: (EDChessPoint*) startPosition toPosition: (EDChessPoint*) endPosition;
+-(BOOL) piece: (EDPiece*) piece willCaptureAtPosition: (EDChessPoint*) position;
+-(EDPiece*) getPieceAt: (EDChessPoint*) position;
 
 @end
