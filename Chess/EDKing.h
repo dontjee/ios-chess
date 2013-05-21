@@ -10,4 +10,6 @@
 
 @interface EDKing : EDPiece
 
+-(BOOL) isInCheck;
+
 @end

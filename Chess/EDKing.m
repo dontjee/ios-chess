@@ -32,4 +32,20 @@
 {
     return @"K";
 }
+
+-(BOOL) isInCheck
+{
+    for (EDPiece* pieceOnBoard in self.game.pieces) {
+        if(pieceOnBoard.color == self.color)
+        {
+            continue;
+        }
+        
+        if( [pieceOnBoard canMoveToPosition:self.position] )
+        {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
 @end

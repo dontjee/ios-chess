@@ -11,6 +11,7 @@
 @interface EDChessGame()
 
 @property (strong) NSMutableArray* capturedPieces;
+@property (strong) NSMutableDictionary* kings;
 
 @end
 
@@ -34,6 +35,7 @@
     if( self )
     {
         NSMutableArray* pieces = [NSMutableArray arrayWithCapacity:32];
+        self.kings = [NSMutableDictionary dictionaryWithCapacity:2];
 
         [self setupPiecesOnBoard:pieces];
         
@@ -49,7 +51,15 @@
 
 -(void) piece: (EDPiece*) piece isMovingTo: (EDChessPoint*) position
 {
-    _currentTurnColor = self.currentTurnColor == WHITE ? BLACK : WHITE;
+    EDKing* king = [self.kings objectForKey:[NSNumber numberWithInt:self.currentTurnColor]];
+
+    EDChessPoint* oldPosition = piece.position;
+    piece.position = position;
+    
+    BOOL isInCheck = [king isInCheck];
+    NSLog(@"In check: %s", isInCheck ? "YES" : "NO");
+    
+    piece.position = oldPosition;
     
     EDPiece* capturedPiece;
     for (EDPiece* pieceOnBoard in self.pieces)
@@ -60,6 +70,7 @@
             break;
         }
     }
+    _currentTurnColor = self.currentTurnColor == WHITE ? BLACK : WHITE;
     
     if( capturedPiece == nil )
     {
@@ -207,6 +218,7 @@
         
         EDKing* king = [[EDKing alloc] initWithGame: self andPosition:[EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"5%i", backRow]] andColor:color];
         [pieces addObject:king];
+        [self.kings setObject:king forKey:colorAsNumber];
     }
 }
 @end
