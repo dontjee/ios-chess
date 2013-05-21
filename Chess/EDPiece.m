@@ -67,13 +67,16 @@
     
     if( self.isSelected && [self canMoveToPosition: position] )
     {
-        [self.game piece: self isMovingTo: position];
+        bool canCompleteMove = [self.game piece: self isMovingTo: position];
         
-        self.ui.frame = [self convertPositionToFrame:position];
-        [self.ui setNeedsDisplay];
-        self.position = position;
-        
-        self.hasMovedAtLeastOnce = true;
+        if( canCompleteMove )
+        {
+            self.ui.frame = [self convertPositionToFrame:position];
+            [self.ui setNeedsDisplay];
+            self.position = position;
+            
+            self.hasMovedAtLeastOnce = true;
+        }
     }
     [self resetUiBackgroundColor];
 }

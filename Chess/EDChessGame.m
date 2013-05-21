@@ -49,7 +49,7 @@
     return self;
 }
 
--(void) piece: (EDPiece*) piece isMovingTo: (EDChessPoint*) position
+-(BOOL) piece: (EDPiece*) piece isMovingTo: (EDChessPoint*) position
 {
     EDKing* king = [self.kings objectForKey:[NSNumber numberWithInt:self.currentTurnColor]];
 
@@ -60,6 +60,11 @@
     NSLog(@"In check: %s", isInCheck ? "YES" : "NO");
     
     piece.position = oldPosition;
+    
+    if( isInCheck )
+    {
+        return NO;
+    }
     
     EDPiece* capturedPiece;
     for (EDPiece* pieceOnBoard in self.pieces)
@@ -74,7 +79,7 @@
     
     if( capturedPiece == nil )
     {
-        return;
+        return YES;
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pieceCaptured" object:capturedPiece ];
@@ -85,9 +90,11 @@
     [currentPieces removeObject:capturedPiece];
     
     _pieces = [NSArray arrayWithArray:currentPieces];
+    
+    return YES;
 }
 
--(int) getCountOfPiecesCrossedFrom: (EDChessPoint*) startPosition toPosition: (EDChessPoint*) endPosition
+-(int) getCountOfPiecesCrossedFrom: (EDChessPoint*) startPosition toPosition: (EDChessPoint*) endPosition byPiece: (EDPiece*) pieceThatIsMoving
 {
     int minX = MIN(startPosition.XPosition, endPosition.XPosition);
     int maxX = MAX(startPosition.XPosition, endPosition.XPosition);
@@ -106,8 +113,15 @@
     }
     
     int countMovedOver = 0;
-    for (EDPiece* piece in self.pieces) {
+    for (EDPiece* piece in self.pieces)
+    {
         if( [positionsMovedOver containsObject:piece.position.AsPositionString] )
+        {
+            countMovedOver++;
+        }
+        
+        // make sure we do not stack our piece on another of our pieces at the end position
+        if( piece.position.AsPositionString == endPosition.AsPositionString && piece.color == pieceThatIsMoving.color )
         {
             countMovedOver++;
         }

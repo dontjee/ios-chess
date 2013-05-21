@@ -35,7 +35,7 @@
         int endYPosition = position.YPosition > self.position.YPosition ? position.YPosition + 1 : position.YPosition - 1;
         straightLineEndPositionOne = [EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"%i%i",endXPosition,endYPosition]];
     }
-    int piecesCrossedOne = [self.game getCountOfPiecesCrossedFrom: self.position toPosition: straightLineEndPositionOne];
+    int piecesCrossedOne = [self.game getCountOfPiecesCrossedFrom: self.position toPosition: straightLineEndPositionOne byPiece:self];
     
     EDChessPoint* straightLineStartPositionTwo;
     if( abs(position.XPosition - self.position.XPosition) == 2 )
@@ -48,7 +48,7 @@
         int startYPosition = position.YPosition > self.position.YPosition ? self.position.YPosition - 1 : self.position.YPosition + 1;
         straightLineStartPositionTwo = [EDChessPoint pointWithPositionString:[NSString stringWithFormat:@"%i%i",position.XPosition,startYPosition]];
     }
-    int piecesCrossedTwo = [self.game getCountOfPiecesCrossedFrom: straightLineStartPositionTwo toPosition: position];
+    int piecesCrossedTwo = [self.game getCountOfPiecesCrossedFrom: straightLineStartPositionTwo toPosition: position byPiece:self];
     
     
     

@@ -14,7 +14,7 @@
 {
     BOOL canMoveInDirection = self.position.XPosition == position.XPosition | self.position.YPosition == position.YPosition;
     
-    int piecesCrossed = [self.game getCountOfPiecesCrossedFrom: self.position toPosition: position];
+    int piecesCrossed = [self.game getCountOfPiecesCrossedFrom: self.position toPosition: position byPiece:self];
     
     BOOL canStopAtLastPosition = [self.game getPieceAt:position] == nil || [self.game piece: self willCaptureAtPosition: position];
     

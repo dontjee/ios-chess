@@ -56,7 +56,7 @@
     
     canMoveInStraightLine &= moveDistance == 1 || (!self.hasMovedAtLeastOnce && moveDistance == 2);
     
-    int piecesCrossed = [self.game getCountOfPiecesCrossedFrom: self.position toPosition: position];
+    int piecesCrossed = [self.game getCountOfPiecesCrossedFrom: self.position toPosition: position byPiece:self];
     
     canMoveInStraightLine &= piecesCrossed == 0;
     
