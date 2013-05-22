@@ -94,6 +94,11 @@
     return YES;
 }
 
+-(void) piece: (EDPiece*) piece didMoveTo: (EDChessPoint*) position
+{
+    
+}
+
 -(int) getCountOfPiecesCrossedFrom: (EDChessPoint*) startPosition toPosition: (EDChessPoint*) endPosition byPiece: (EDPiece*) pieceThatIsMoving
 {
     int minX = MIN(startPosition.XPosition, endPosition.XPosition);

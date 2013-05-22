@@ -77,6 +77,8 @@
             
             self.hasMovedAtLeastOnce = true;
         }
+        
+        [self.game piece: self didMoveTo: position];
     }
     [self resetUiBackgroundColor];
 }

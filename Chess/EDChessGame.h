@@ -21,6 +21,8 @@
 @property (readonly) ChessColor currentTurnColor;
 
 -(BOOL) piece: (EDPiece*) piece isMovingTo: (EDChessPoint*) position;
+-(void) piece: (EDPiece*) piece didMoveTo: (EDChessPoint*) position;
+
 -(int) getCountOfPiecesCrossedFrom: (EDChessPoint*) startPosition toPosition: (EDChessPoint*) endPosition byPiece: (EDPiece*) piece;
 -(BOOL) piece: (EDPiece*) piece willCaptureAtPosition: (EDChessPoint*) position;
 -(EDPiece*) getPieceAt: (EDChessPoint*) position;
