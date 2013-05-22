@@ -69,7 +69,7 @@
     EDPiece* capturedPiece;
     for (EDPiece* pieceOnBoard in self.pieces)
     {
-        if( position.AsPositionString == pieceOnBoard.position.AsPositionString && pieceOnBoard != piece )
+        if( [position.AsPositionString isEqualToString:pieceOnBoard.position.AsPositionString] && pieceOnBoard != piece )
         {
             capturedPiece = pieceOnBoard;
             break;
@@ -121,7 +121,7 @@
         }
         
         // make sure we do not stack our piece on another of our pieces at the end position
-        if( piece.position.AsPositionString == endPosition.AsPositionString && piece.color == pieceThatIsMoving.color )
+        if( [piece.position.AsPositionString isEqualToString:endPosition.AsPositionString] && piece.color == pieceThatIsMoving.color )
         {
             countMovedOver++;
         }
@@ -133,7 +133,7 @@
 -(EDPiece*) getPieceAt: (EDChessPoint*) position
 {
     for (EDPiece* pieceOnBoard in self.pieces) {
-        if( position.AsPositionString == pieceOnBoard.position.AsPositionString )
+        if( [position.AsPositionString isEqualToString:pieceOnBoard.position.AsPositionString] )
         {
             return pieceOnBoard;
         }
@@ -144,7 +144,7 @@
 -(BOOL) piece: (EDPiece*) piece willCaptureAtPosition: (EDChessPoint*) position
 {
     for (EDPiece* pieceOnBoard in self.pieces) {
-        if( position.AsPositionString == pieceOnBoard.position.AsPositionString )
+        if( [position.AsPositionString isEqualToString:pieceOnBoard.position.AsPositionString] )
         {
             return pieceOnBoard.color != piece.color;
         }

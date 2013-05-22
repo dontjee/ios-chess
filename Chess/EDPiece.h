@@ -28,6 +28,7 @@ typedef enum chessColor
 @property (strong, readonly) UIView* view;
 
 -(EDPiece*) initWithGame: (EDChessGame*) game andPosition: (EDChessPoint*) position andColor: (ChessColor) color;
+- (void) removeFromBoard;
 
 // Must be overriden in subclasses
 - (BOOL) canMoveToPosition: (EDChessPoint*) position;

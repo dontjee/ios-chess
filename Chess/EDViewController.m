@@ -37,7 +37,7 @@
 -(void)pieceCaptured: (NSNotification*) notification
 {
     EDPiece* capturedPiece = (EDPiece*) notification.object;
-    [capturedPiece.view removeFromSuperview];
+    [capturedPiece removeFromBoard];
 }
 
 - (void)didTapWithGesture:(UITapGestureRecognizer *)tapGesture {

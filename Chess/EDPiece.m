@@ -104,6 +104,19 @@
     self.isSelected = NO;
 }
 
+- (void) removeFromBoard
+{
+    for (UIGestureRecognizer* gestureRecognizer in [self.ui gestureRecognizers])
+    {
+        [self.ui removeGestureRecognizer:gestureRecognizer];
+    }
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [self.view removeFromSuperview];
+    [self.view.superview delete:self.view];
+}
+
 - (BOOL) canMoveToPosition: (EDChessPoint*) position
 {
     [self doesNotRecognizeSelector:_cmd];
