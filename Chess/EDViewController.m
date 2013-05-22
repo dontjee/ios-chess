@@ -7,10 +7,12 @@
 //
 
 #import "EDViewController.h"
+#import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 
 @interface EDViewController ()
 
 @property (strong) EDChessGame* game;
+@property (strong) MSClient* servicesClient;
 
 @end
 
@@ -19,8 +21,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor clearColor];
+    self.servicesClient = [MSClient clientWithApplicationURL:[NSURL URLWithString:@"https://chess-app.azure-mobile.net/"]];
+}
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (self.servicesClient.currentUser != nil) {
+        return;
+    }
+    
+    [self.servicesClient loginWithProvider:@"google" onController:self animated:YES completion:^(MSUser *user, NSError *error) {
+        [self setupChessGame];
+    }];
+}
+
+- (void)setupChessGame
+{
+    self.view.backgroundColor = [UIColor clearColor];
+    
     self.game = [[EDChessGame alloc] init];
     
     for (EDPiece* piece in self.game.pieces) {
@@ -33,6 +51,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pieceCaptured:) name:@"pieceCaptured" object:nil];
 }
+
 
 -(void)pieceCaptured: (NSNotification*) notification
 {
