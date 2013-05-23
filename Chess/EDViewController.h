@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EDChessPoint.h"
-#import "EDChessGame.h"
 
 @interface EDViewController : UIViewController <UIGestureRecognizerDelegate>
 

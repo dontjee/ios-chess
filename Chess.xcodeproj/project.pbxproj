@@ -18,6 +18,7 @@
 		7833F92F1740295900E08138 /* EDChessPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7833F92E1740295900E08138 /* EDChessPoint.m */; };
 		7887E0EA17429CFF008C43DE /* EDChessGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7887E0E917429CFF008C43DE /* EDChessGame.m */; };
 		78C87512174D3D680034FE82 /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C87511174D3D680034FE82 /* WindowsAzureMobileServices.framework */; };
+		78C87515174E705B0034FE82 /* EDChessService.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C87514174E705B0034FE82 /* EDChessService.m */; };
 		78EC9997173AD2FC0087FC33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC9996173AD2FC0087FC33 /* UIKit.framework */; };
 		78EC9999173AD2FC0087FC33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC9998173AD2FC0087FC33 /* Foundation.framework */; };
 		78EC999B173AD2FC0087FC33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC999A173AD2FC0087FC33 /* CoreGraphics.framework */; };
@@ -70,6 +71,8 @@
 		7887E0E817429CFF008C43DE /* EDChessGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDChessGame.h; sourceTree = "<group>"; };
 		7887E0E917429CFF008C43DE /* EDChessGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDChessGame.m; sourceTree = "<group>"; };
 		78C87511174D3D680034FE82 /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WindowsAzureMobileServices.framework; path = Pods/WindowsAzureMobileServices/WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
+		78C87513174E705B0034FE82 /* EDChessService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDChessService.h; sourceTree = "<group>"; };
+		78C87514174E705B0034FE82 /* EDChessService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDChessService.m; sourceTree = "<group>"; };
 		78EC9993173AD2FC0087FC33 /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78EC9996173AD2FC0087FC33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		78EC9998173AD2FC0087FC33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -183,6 +186,8 @@
 				78256A0A174059BF009A8F1F /* EDKing.m */,
 				7887E0E817429CFF008C43DE /* EDChessGame.h */,
 				7887E0E917429CFF008C43DE /* EDChessGame.m */,
+				78C87513174E705B0034FE82 /* EDChessService.h */,
+				78C87514174E705B0034FE82 /* EDChessService.m */,
 			);
 			path = Chess;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 				78256A08174057CD009A8F1F /* EDQueen.m in Sources */,
 				78256A0B174059BF009A8F1F /* EDKing.m in Sources */,
 				7887E0EA17429CFF008C43DE /* EDChessGame.m in Sources */,
+				78C87515174E705B0034FE82 /* EDChessService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
