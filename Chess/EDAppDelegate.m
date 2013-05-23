@@ -10,6 +10,8 @@
 
 #import "EDViewController.h"
 
+#import "EDChessService.h"
+
 @implementation EDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -31,6 +33,9 @@
     UIImage * resultImage = UIGraphicsGetImageFromCurrentImageContext();
     
     self.window.backgroundColor = [UIColor colorWithPatternImage:resultImage];
+    
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound];
+    
     return YES;
 }
 
@@ -59,6 +64,24 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:
+(NSData *)deviceToken {
+    
+    
+    // Register the APNS deviceToken with the Mobile Service Devices table.
+    NSCharacterSet *angleBrackets = [NSCharacterSet characterSetWithCharactersInString:@"<>"];
+    NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:angleBrackets];
+    
+    
+    EDChessService* instance = [EDChessService defaultService];
+    [instance registerDeviceToken:token];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"Error: %@", error);
 }
 
 @end

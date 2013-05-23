@@ -15,7 +15,9 @@
 
 -(BOOL) isUserSetup;
 
--(void) setupUserOnController: (UIViewController*) controller completion:(void(^)(NSError*)) completion;
+-(void) setupUserOnController: (UIViewController*) controller;
+
+-(void) registerDeviceToken: (NSString*) token;
 
 +(EDChessService*) defaultService;
 

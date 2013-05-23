@@ -22,7 +22,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [[EDChessService defaultService] setupUserOnController:self completion:^(NSError *error){}];
+    [[EDChessService defaultService] setupUserOnController:self];
 }
 
 - (void)didReceiveMemoryWarning

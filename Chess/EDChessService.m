@@ -16,6 +16,9 @@ static EDChessService* chessService = nil;
 
 @property (strong) MSClient* servicesClient;
 @property (strong) EDChessGame* game;
+@property (strong) MSUser* user;
+@property (strong) NSString* deviceToken;
+
 @property (weak) UIViewController* controller;
 
 @end
@@ -38,19 +41,23 @@ static EDChessService* chessService = nil;
     return self.servicesClient.currentUser != nil;
 }
 
--(void) setupUserOnController: (UIViewController*) controller completion:(void (^)(NSError*)) completion
+-(void) setupUserOnController: (UIViewController*) controller
 {
     self.controller = controller;
     if( [[EDChessService defaultService] isUserSetup] )
     {
-        completion(nil);
         return;
     }
     
     [self.servicesClient loginWithProvider:@"google" onController:self.controller animated:YES completion:^(MSUser *user, NSError *error) {
+        self.user = user;
         [self setupChessGame];
-        completion(error);
     }];
+}
+
+-(void) registerDeviceToken: (NSString*) token
+{
+    self.deviceToken = token;
 }
 
 - (void)setupChessGame
