@@ -73,12 +73,14 @@
         {
             self.ui.frame = [self convertPositionToFrame:position];
             [self.ui setNeedsDisplay];
+            
+            EDChessPoint* oldPosition = self.position;
             self.position = position;
             
             self.hasMovedAtLeastOnce = true;
+ 
+            [self.game piece:self didMoveFrom:oldPosition];
         }
-        
-        [self.game piece: self didMoveTo: position];
     }
     [self resetUiBackgroundColor];
 }

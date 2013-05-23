@@ -7,9 +7,11 @@
 //
 
 #import "EDChessGame.h"
+#import "EDChessMove.h"
 
 @interface EDChessGame()
 
+@property (strong) NSMutableArray* moveHistory;
 @property (strong) NSMutableArray* capturedPieces;
 @property (strong) NSMutableDictionary* kings;
 
@@ -36,6 +38,7 @@
     {
         NSMutableArray* pieces = [NSMutableArray arrayWithCapacity:32];
         self.kings = [NSMutableDictionary dictionaryWithCapacity:2];
+        self.moveHistory = [NSMutableArray array];
 
         [self setupPiecesOnBoard:pieces];
         
@@ -94,9 +97,9 @@
     return YES;
 }
 
--(void) piece: (EDPiece*) piece didMoveTo: (EDChessPoint*) position
+-(void) piece: (EDPiece*) piece didMoveFrom: (EDChessPoint*) fromPosition
 {
-    
+    [self.moveHistory addObject:[EDChessMove moveFrom:fromPosition to:piece.position]];
 }
 
 -(int) getCountOfPiecesCrossedFrom: (EDChessPoint*) startPosition toPosition: (EDChessPoint*) endPosition byPiece: (EDPiece*) pieceThatIsMoving
