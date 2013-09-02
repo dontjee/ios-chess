@@ -59,7 +59,7 @@
     EDChessPoint* oldPosition = piece.position;
     piece.position = position;
     
-    BOOL isInCheck = [king isInCheck];
+    BOOL isInCheck = [king isInCheck: piece movingTo: position];
     NSLog(@"In check: %s", isInCheck ? "YES" : "NO");
     
     piece.position = oldPosition;

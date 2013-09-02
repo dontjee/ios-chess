@@ -10,6 +10,6 @@
 
 @interface EDKing : EDPiece
 
--(BOOL) isInCheck;
+-(BOOL) isInCheck: (EDPiece*) piece movingTo: (EDChessPoint*) position;
 
 @end

@@ -33,7 +33,7 @@
     return @"K";
 }
 
--(BOOL) isInCheck
+-(BOOL) isInCheck: (EDPiece*) piece movingTo: (EDChessPoint*) position
 {
     for (EDPiece* pieceOnBoard in self.game.pieces) {
         if(pieceOnBoard.color == self.color)
@@ -41,7 +41,7 @@
             continue;
         }
         
-        if( [pieceOnBoard canMoveToPosition:self.position] )
+        if( [pieceOnBoard canMoveToPosition:self.position] && pieceOnBoard.position != position )
         {
             return TRUE;
         }
